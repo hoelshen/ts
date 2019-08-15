@@ -18,3 +18,18 @@ function createButton(text: string) {
 ;['0', '1', '2', '3'].forEach((text: any) => {
   createButton(text)
 })
+
+interface StringArray{
+  [index:number]:string
+}
+
+let chars:StringArray = ["A", "B"]
+console.log('chars', chars)
+
+
+interface Name {
+  [x:string] :string,
+  // y:number  //这是不被允许的
+}
+
+
