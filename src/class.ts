@@ -13,6 +13,7 @@ class Dog{
 
 //name属性在实例上不在原型上
 
+// 类的属性 必须要有初始值
 
 // 类成员的方法是实例方法
 console.log('constructor', Dog.prototype)
@@ -28,7 +29,7 @@ class hus extends Dog{
   // color:string
 }
 
-//写为public 的化 可以省下 color：string 
+//写为public 的话 可以省下 color：string 
 
 //类的成员修饰符
 
@@ -40,12 +41,15 @@ class hus extends Dog{
 
 // private constructor 既不能被实例化 也不能被继承
 
-// protected 不能被实例化 只能被继承
+// protected 只能在类中被访问 不能被实例化 只能被继承
 
 
+//readonly  一定要被初始化， 构造参数
+
+//static  不能被访问  只能被继承？ 
 
 
-//抽象类
+//抽象类  只能被继承 不能被实例化
 abstract class Animal{
   eat(){
 
@@ -88,8 +92,9 @@ class WorkFlow{
   step2(){
     return this
   }
-
 }
+// class 返回的this 很容易链式调用 
+
 new WorkFlow().step1().step2()
 
 class Myflow extends WorkFlow {

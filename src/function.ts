@@ -1,6 +1,6 @@
 // let add =  (x:number, y:number) =>   number
 
-
+// 后三种没有具体的实现 必须要调用
  type Add = (x:number, y:number) => number
 
 //函数重载
@@ -16,3 +16,9 @@ function add8(...rest:any):any{
     // return rest.reduce((pre, cur)=>pre+cur)
   }
 }
+
+
+
+
+
+
