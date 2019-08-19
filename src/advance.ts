@@ -137,9 +137,75 @@ let obj2 : Empty<number> = {}
 
 
 
+//类型保护
+
+// typescript 能够在特定的区块中保证变量属于某种确定的类型
+// 可以在此区块中放心引用此类型的属性， 或者调用此类型的方法
+
+enum Type {strong, week}
+
+class Java{
+  helloJava(){
+    console.log('Hello Java')
+  }
+  java: any
+}
 
 
 
+class JavaScript{
+  helloJavaScript(){
+    console.log('Hello JavaScript')
+  }
+  javascript:any
+}
+
+function isJava(lang: Java | JavaScript): lang is Java{
+  return (lang as Java).helloJava !== undefined
+}
+
+
+
+function getLanguage(type: Type, x: string | null){
+  let lang = type === Type.strong ? new Java() : new JavaScript()
+  // if(lang.helloJava){
+  //   lang.helloJava()
+  // } else{
+  //   lang.helloJava(Script)
+  // }
+
+  if(isJava(lang)){
+    lang.helloJava()
+  } else{
+    lang.helloJavaScript()
+  }
+
+  //instanceof
+  // if(lang instanceof Java){
+  //   lang.helloJava()
+  // } else{
+  //   lang.helloJavaScript()
+  // }
+
+  
+
+ //in 
+  if('java' in lang){
+    lang.helloJava()
+  } else{
+    lang.helloJavaScript();
+  }
+
+  //typeof 
+  if(typeof x ==='string'){
+    x.length
+  } else{
+    // x.toFixed(2)
+  }
+
+
+  return lang
+}
 
 
 
