@@ -1,0 +1,9 @@
+{
+  "extends":"./tsconfgi.base",
+  // "compileOnSave": true,
+  "compilerOptions": {
+    // "incremental": true, //增量编译
+    // "diagnostics": true, // 打印诊断信息
+    "lib": ["es2019.array"],                             /* Specify library files to be included in the compilation. */
+  }
+}
