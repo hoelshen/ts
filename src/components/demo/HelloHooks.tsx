@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import { Button } from 'antd'
+// import { Button } from 'antd'
 
 
 interface Greeting {
@@ -19,7 +19,7 @@ const HelloHooks = (props:Greeting)=>{
   return(
     <>
     <p>你点击了 {count} {text}</p>
-    <Button onClick={()=>{setCount(count+1)}} > Hello {props.name}</Button>
+    {/* <Button onClick={()=>{setCount(count+1)}} > Hello {props.name}</Button> */}
     </>
   )
 }

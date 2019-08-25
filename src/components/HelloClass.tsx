@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'antd'
+// import { Button } from 'antd'
 
 
 
@@ -26,7 +26,7 @@ class HelloClass extends Component<Greeting, State>{
     return (
       <>
       <p>你点击了 {this.state.count}</p>
-      <Button onClick={()=>{this.setState({count: this.state.count + 1})}} > Hello {this.props.name}</Button>
+      {/* <Button onClick={()=>{this.setState({count: this.state.count + 1})}} > Hello {this.props.name}</Button> */}
       </>
     )
   }

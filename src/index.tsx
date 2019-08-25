@@ -1,19 +1,16 @@
 import React from 'react';
-import ReactDom from 'react-dom' 
+import ReactDom from 'react-dom'
+import { Provider } from "mobx-react"
+import store from './redux/mobx';
+import Root  from './routers';
 
 
-
-import Hello from './components/demo/Hello'
-import HelloClass from './components/HelloClass'
-import HelloHOC from './components/HelloHOC'
-import HelloHooks from './components/demo/HelloHooks'
-
-
+console.log(Root);
 ReactDom.render(
-  // <HelloClass name="2323d" firstName ={''}/>,
-  
-  // <HelloClass name="2323d" firstName ={''}/>,
-  // <HelloHOC name="2323d" loading={false}/>,
-  <HelloHooks name="2323d" firstName={''}/>,
+  // 在这里我们要使用mobx-react里的Provider，
+  // 把所有的state注入Provider中，后面的子组件都可以使用@inject("想要使用的state")注入被观察者。
+  <Provider Store= {store}>
+  <Root />
+  </Provider>,
   document.querySelectorAll('.app')[0]
-)
+) 
